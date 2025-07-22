@@ -22,12 +22,19 @@ resource "opentelekomcloud_obs_bucket" "remote_state_bucket" {
 output "terraform_state_backend_config" {
   value = <<EOT
     backend "s3" {
-      bucket                      = "${opentelekomcloud_obs_bucket.remote_state_bucket.bucket}"
-      key                         = "tfstate"
-      region                      = "${opentelekomcloud_obs_bucket.remote_state_bucket.region}"
-      endpoint                    = "obs.${data.opentelekomcloud_identity_project_v3.current.region}.otc.t-systems.com"
+      bucket = "${opentelekomcloud_obs_bucket.remote_state_bucket.bucket}"
+      key    = "tfstate"
+      region = "${opentelekomcloud_obs_bucket.remote_state_bucket.region}"
+
+      endpoints = {
+        s3 = "https://obs.${data.opentelekomcloud_identity_project_v3.current.region}.otc.t-systems.com/"
+      }
+
       skip_region_validation      = true
       skip_credentials_validation = true
+      skip_requesting_account_id  = true
+      skip_metadata_api_check     = true
+      use_lockfile                = true
     }
   EOT
 }
