@@ -64,6 +64,7 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_tf_state_bucket_name"></a> [tf\_state\_bucket\_name](#input\_tf\_state\_bucket\_name) | Bucket name. | `string` | n/a | yes |
+| <a name="input_key_suffix_byte_length"></a> [key\_suffix\_byte\_length](#input\_key\_suffix\_byte\_length) | Byte length of the random suffix to be used for the KMS key | `number` | `4` | no |
 
 ## Outputs
 

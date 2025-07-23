@@ -12,3 +12,9 @@ resource "errorcheck_is_valid" "provider_project_constraint" {
     error_message = "ERROR! This module requires the provider project (tenant_name) to be a region level project. See README.md for more information."
   }
 }
+
+variable "key_suffix_byte_length" {
+  type        = number
+  description = "Byte length of the random suffix to be used for the KMS key"
+  default     = 4
+}

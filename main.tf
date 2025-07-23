@@ -1,5 +1,5 @@
 resource "random_id" "kms_key_unique_suffix" {
-  byte_length = 4
+  byte_length = var.key_suffix_byte_length
 }
 
 resource "opentelekomcloud_kms_key_v1" "remote_state_bucket_kms_key" {
