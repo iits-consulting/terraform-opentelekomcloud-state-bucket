@@ -34,7 +34,6 @@ output "terraform_state_backend_config" {
       skip_credentials_validation = true
       skip_requesting_account_id  = true
       skip_metadata_api_check     = true
-      use_lockfile                = true
     }
   EOT
 }
