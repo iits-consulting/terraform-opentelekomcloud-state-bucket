@@ -3,10 +3,12 @@ resource "random_id" "kms_key_unique_suffix" {
 }
 
 resource "opentelekomcloud_kms_key_v1" "remote_state_bucket_kms_key" {
-  key_alias       = "${var.tf_state_bucket_name}-key-${random_id.kms_key_unique_suffix.hex}"
-  key_description = "${var.tf_state_bucket_name} encryption key"
-  pending_days    = 7
-  is_enabled      = "true"
+  key_alias         = "${var.tf_state_bucket_name}-key-${random_id.kms_key_unique_suffix.hex}"
+  key_description   = "${var.tf_state_bucket_name} encryption key"
+  pending_days      = 7
+  is_enabled        = "true"
+  rotation_enabled  = var.kms_key_rotation_interval != null
+  rotation_interval = var.kms_key_rotation_interval
 }
 
 resource "opentelekomcloud_obs_bucket" "remote_state_bucket" {
