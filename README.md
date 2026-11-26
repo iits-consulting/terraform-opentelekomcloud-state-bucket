@@ -64,8 +64,8 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_tf_state_bucket_name"></a> [tf\_state\_bucket\_name](#input\_tf\_state\_bucket\_name) | Bucket name. | `string` | n/a | yes |
-| <a name="input_kms_key_rotation_interval"></a> [kms\_key\_rotation\_interval](#input\_kms\_key\_rotation\_interval) | Rotation interval in days (30-365) for the KMS key created by this module. Setting a value enables automatic key rotation. null turns rotation off, also on a key where it was enabled outside of Terraform. (default: null) | `number` | `null` | no |
 | <a name="input_key_suffix_byte_length"></a> [key\_suffix\_byte\_length](#input\_key\_suffix\_byte\_length) | Byte length of the random suffix to be used for the KMS key | `number` | `4` | no |
+| <a name="input_kms_key_rotation_interval"></a> [kms\_key\_rotation\_interval](#input\_kms\_key\_rotation\_interval) | Rotation interval in days (30-365) for the KMS key created by this module. Setting a value enables automatic key rotation. null turns rotation off, also on a key where it was enabled outside of Terraform. (default: null) | `number` | `null` | no |
 
 ## Outputs
 
