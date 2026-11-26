@@ -7,7 +7,7 @@ Usage Example:
 
 ```hcl
 module "tf_state_bucket" {
-  source = "iits-consulting/state_bucket/opentelekomcloud"
+  source = "iits-consulting/state-bucket/opentelekomcloud"
 
   tf_state_bucket_name = "${var.context}-${var.stage}-kubernetes-tfstate"
   providers = {
